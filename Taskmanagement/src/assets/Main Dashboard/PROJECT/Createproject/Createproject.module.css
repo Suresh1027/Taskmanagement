@@ -1,0 +1,113 @@
+/*this style for project*/
+
+.projectcon {
+    width: 40%;
+    height: auto;
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar {
+    width: 22rem;
+    height: auto;
+    color: rgb(244, 245, 247);
+    font-weight: 600;
+    border-radius: 10px;
+    font-family: poppins, sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-left: -40px;
+    color: #faf6f6;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('/public/Images/cardbg.jpg');
+}
+
+.sidebar input::placeholder {
+    color: rgb(244, 245, 247);
+    font-weight: 400;
+}
+
+.sidebar:hover {
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.form input {
+    border-radius: 20px;
+    border: 1px solid rgba(244, 245, 247, 0.178);
+    background-color: transparent;
+    color: rgb(244, 245, 247);
+    font-weight: 400;
+}
+
+.form input[type="text"] {
+    border-radius: 20px;
+    border: 1px solid rgba(244, 245, 247, 0.178);
+    background-color: transparent;
+    color: rgb(244, 245, 247);
+    font-weight: 400;
+    box-shadow: none;
+}
+
+.form textarea {
+    border-radius: 20px;
+    border: 1px solid rgba(244, 245, 247, 0.178);
+    background-color: transparent;
+    color: rgb(244, 245, 247);
+    font-weight: 400;
+}
+
+.form select {
+    border-radius: 20px;
+    border: 1px solid rgba(244, 245, 247, 0.178);
+    background-color: transparent;
+    color: rgb(244, 245, 247);
+    font-weight: 400;
+}
+
+.btn {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: poppins, sans-serif;
+    transition: all 0.3s ease;
+}
+
+@keyframes rotateGradient {
+    0% {
+        background: linear-gradient(45deg, #6a11cb, #2575fc, #6a11cb);
+    }
+
+    100% {
+        background: linear-gradient(to right, #4e54c8, #8f94fb, #4e54c8);
+    }
+}
+
+.btn:hover {
+    animation: rotateGradient 1s linear infinite;
+}
+
+.btn:hover {
+    background-color: #78777c;
+    color: white;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: poppins, sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+/*this style for project end*/

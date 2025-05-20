@@ -1,0 +1,154 @@
+/* LandingPage.module.css */
+
+.landingPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    position: relative;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: #f5f5f5;
+    /* Light gray for better contrast */
+}
+
+.landingPage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/Images/Landingpage.jpg');
+    background-size: cover;
+    background-position: center;
+    animation: zoomInOut 10s infinite alternate ease-in-out;
+    /* Animation for background image */
+    z-index: 0;
+    opacity: 0.9;
+    /* Slightly transparent layer */
+}
+
+.landingPage>* {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.landingHeader {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.landingHeader h1 {
+    font-size: 2.5rem;
+    color: #ffcc00;
+    /* Bright yellow for a welcoming feel */
+    margin-bottom: 1rem;
+}
+
+.landingHeader p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    /* Soft gray for subtle emphasis */
+    margin-bottom: 1.5rem;
+}
+
+.getStartedBtn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: #ffffff;
+    /* White text for the button */
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.getStartedBtn:hover {
+    background-color: #0056b3;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 2rem;
+}
+
+/* Updated gradient background for features */
+
+.feature {
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, white, gray);
+    /* Gradient from white to gray */
+    border: none;
+    /* Removed border for a cleaner look */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #333;
+    /* Dark text for better contrast */
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feature h2 {
+    font-size: 1.5rem;
+    color: #007bff;
+    /* Blue for feature titles */
+    margin-bottom: 0.5rem;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #333333;
+    /* Dark gray for feature descriptions */
+}
+
+@media screen and (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature {
+        margin: 1rem 0;
+        width: 80%;
+    }
+
+    .landingHeader h1 {
+        font-size: 2rem;
+    }
+
+    .landingHeader p {
+        font-size: 1rem;
+    }
+
+    .getStartedBtn {
+        font-size: 0.9rem;
+    }
+    .feature h2 {
+        font-size: 1.3rem;
+    }
+    
+}
