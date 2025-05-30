@@ -4,11 +4,21 @@ import styles from '../Getproject/Getproject.module.css'
 import axios from 'axios';
 function Getproject() {
     const [getData, setGetdata] = useState([]);
+    console.log(getData);
 
     useEffect(() => {
         async function getProject() {
-            const response = await axios.get(`http://localhost:5000/projects`)
-            const response1 = response.data.projects
+            const token = localStorage.getItem("token")
+            const response = await axios.get(`http://localhost:5000/getIndividualproject`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+            console.log(response);
+            
+            const response1 = response.data
+            console.log(response1);
+            
             setGetdata(response1)
         }
         getProject()

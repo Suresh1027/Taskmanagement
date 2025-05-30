@@ -24,6 +24,7 @@ function Login() {
       const response = await axios.post("http://localhost:5000/auth/signIn", login);
       localStorage.setItem("token", response.data.token1);
       localStorage.setItem("user", JSON.stringify(response.data.user))
+      console.log(response);
 
       alert("login successful")
       navigate("/Dashboard")
