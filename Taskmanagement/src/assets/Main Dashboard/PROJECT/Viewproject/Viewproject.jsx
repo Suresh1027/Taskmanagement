@@ -15,7 +15,7 @@ function Viewproject() {
                 const projectData = response.data.project;
                 setProject(projectData);
                 console.log(projectData);
-                
+
             } catch (error) {
                 console.error("Failed to fetch project:", error);
             }

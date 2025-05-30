@@ -1,18 +1,29 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import styles from '../Getproject/Getproject.module.css'
 import axios from 'axios';
 function Getproject() {
     const [getData, setGetdata] = useState([]);
 
     useEffect(() => {
-        async function getproject() {
+        async function getProject() {
             const response = await axios.get(`http://localhost:5000/projects`)
             const response1 = response.data.projects
             setGetdata(response1)
         }
-        getproject()
+        getProject()
     }, [])
+
+    async function handleclick(id) {
+        try {
+            const deletepro = await axios.delete(`http://localhost:5000/deleteproject/${id}`)
+            console.log(deletepro);
+            alert("succesfully deleted")
+        } catch (error) {
+            console.error("server error", error);
+            alert("project can't delete")
+        }
+    }
     return (
         <>
             <div className={`container-fluid ${styles.cardcont}`} >
@@ -29,7 +40,10 @@ function Getproject() {
                                         <p className='card-text'>{list.team.username}</p>
                                         <p className="card-text">{list.startDate}</p>
                                         <p className="card-text">{list.endDate}</p>
-                                        <Link to={`/Viewproject/${list._id}`} className="btn btn-secondary">View Project</Link>
+                                        <div>
+                                            <Link to={`/Viewproject/${list._id}`} className={`${styles.btn}`}>View Project</Link>
+                                            <Link className={`${styles.btn}`} onClick={() => handleclick(list._id)}>Delete</Link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

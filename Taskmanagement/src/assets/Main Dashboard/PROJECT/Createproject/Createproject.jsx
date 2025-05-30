@@ -5,6 +5,7 @@ import axios from 'axios';
 function Createproject() {
     const [getUser, setGetUser] = useState([])
     const [getStatus, setGetStatus] = useState([])
+
     const [postData, setPostdata] = useState({
         name: "",
         description: "",
@@ -18,12 +19,11 @@ function Createproject() {
     useEffect(() => {
         async function getproject() {
 
-
             const response2 = await axios.get(`http://localhost:5000/auth/getAllUsers`);
             const response3 = response2.data
             setGetUser(response3)
 
-            const response4 = await axios.get(`http://localhost:5000/status/getStatus`);
+            const response4 = await axios.get(`http://localhost:5000/status`);
             const response5 = response4.data.enumstatus
             setGetStatus(response5);
         }
@@ -53,7 +53,7 @@ function Createproject() {
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="taskTitle" className="form-label">budget</label>
-                                <input type="text" placeholder='title' className="form-control" id="taskTitle" name='budget' value={postData.budget} onChange={handleInput} />
+                                <input type="text" placeholder='Amount' className="form-control" id="taskTitle" name='budget' value={postData.budget} onChange={handleInput} />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="taskPriority" className="form-label">Team</label>

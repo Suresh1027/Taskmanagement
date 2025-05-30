@@ -11,6 +11,7 @@ function Dashboard() {
         setloginData(JSON.parse(userdata))
 
     }, [])
+    
     return (
         <>
             <div className={styles.dashboardContainer}>
