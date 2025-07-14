@@ -2,7 +2,8 @@
     width: 100%;
     height: auto;
     border-radius: 20px;
-    margin-left: -5%;
+    margin-left: -5px;
+    margin-top: 10px;
     color: rgb(244, 245, 247);
     font-weight: 600;
     font-family: poppins, sans-serif;

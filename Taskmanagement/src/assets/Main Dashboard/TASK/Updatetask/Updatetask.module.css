@@ -1,22 +1,33 @@
-.cardcontainer {
+.updcardcontainer {
     width: 100%;
-    height: auto;
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     background-image: url('https://c4.wallpaperflare.com/wallpaper/698/917/306/minimalism-simple-blue-gradient-wallpaper-preview.jpg');
-    background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
 }
 
-.card {
-    width: 23%;
-    height: 115vh;
-    margin-top: 10px;
-    margin-left: 5px;
+.updcard select {
+    width: 17rem;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid rgba(244, 245, 247, 0.178);
+    background-color: transparent;
+}
+
+.updcard option {
+    color: black;
+}
+
+.updcard {
+    height: 90vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
@@ -28,34 +39,52 @@
     font-family: poppins, sans-serif;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     background-image: url('/public/Images/cardbg.jpg');
-    background-size: cover;
-    background-position: center;
     background-attachment: fixed;
-    background-repeat: no-repeat;
+
 }
 
-.cardbody {
+.updcardbody {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 20px;
 }
 
-.cardbody h3 {
+
+.updcardbody input {
+    width: 17rem;
+    text-align: center;
+    margin-top: 5px;
     font-size: 1.5rem;
-    font-weight: 300;
+    padding: 5px;
+    border-radius: 20px;
+    border: 1px solid rgba(244, 245, 247, 0.178);
+    background-color: transparent;
+    color: rgb(244, 245, 247);
 }
 
-.cardbody p {
-    font-size: 20px;
-    font-weight: 400;
+.updcardbody textarea {
+    width: 17rem;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 20px;
+    border: 1px solid rgba(244, 245, 247, 0.178);
+    background-color: transparent;
+    color: rgb(244, 245, 247);
+}
+
+.updcardbody p {
+    font-size: 2px;
     margin-top: 16px;
     color: rgb(244, 245, 247);
     border-radius: 20px;
-    padding: 2px;
+    padding: 8px;
     border: 1px solid rgba(244, 245, 247, 0.178);
 }
 
-.cardbutton {
+.updcardbutton {
     font-size: 20px;
     font-family: poppins, sans-serif;
     background: linear-gradient(45deg, #6a11cb, #2575fc);

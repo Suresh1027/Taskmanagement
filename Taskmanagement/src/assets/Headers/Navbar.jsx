@@ -1,11 +1,12 @@
 import React from 'react'
 import styles from '../Headers/Navbar.module.css'
+import { Link } from 'react-router-dom'
 function Navbar() {
     return (
         <>
             <nav className={`navbar navbar-expand-lg ${styles.navbar}`}>
                 <div className="container-fluid">
-                    <a className={`navbar-brand ${styles.navbarBrand}`} href="#">Task Management</a>
+                    <Link className={`navbar-brand ${styles.navbarBrand}`} to={"/"}>Task Management</Link>
                     <button className={`navbar-toggler ${styles.navbarToggler}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className={`navbar-toggler-icon ${styles.navbarTogglerIcon}`}></span>
                     </button>
@@ -21,6 +22,9 @@ function Navbar() {
                                 <a className={`nav-link ${styles.navLink}`} href="#">Dashboard</a>
                             </li>
                         </ul>
+                        <div>
+                            <Link to={"/Login"} className='btn btn-primary'>GETSTART</Link>
+                        </div>
                     </div>
                 </div>
             </nav>

@@ -84,7 +84,7 @@ exports.singleProject = async (req, res) => {
             return res.status(400).json({ message: "Invalid project ID" });
         }
 
-        const project = await Project.findById(id);
+        const project = await Project.findById(id).populate('team', 'username');
 
         if (!project) {
             return res.status(404).json({ message: "Project not found" });

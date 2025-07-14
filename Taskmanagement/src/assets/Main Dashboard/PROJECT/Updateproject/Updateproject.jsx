@@ -4,20 +4,27 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 function Updateproject() {
     const { id } = useParams()
+
+    const [getStatus, setGetStatus] = useState([])
+
     const [updatepro, setupdatePro] = useState({
         name: "",
         description: "",
         budget: "",
         status: "",
-        startDate: '',
-        endDate: ''
+        startDate: "",
+        endDate: ""
     })
 
     useEffect(() => {
         async function getProject() {
-            const response = await axios.get(`http://localhost:5000/updateproject/${id}`)
+            const response = await axios.get(`http://localhost:5000/project/update/${id}`)
             const response1 = response.data
             setupdatePro(response1)
+
+            const response4 = await axios.get(`http://localhost:5000/project/status`);
+            const response5 = response4.data.enumstatus
+            setGetStatus(response5);
         }
         getProject()
     }, [])
@@ -29,14 +36,13 @@ function Updateproject() {
     async function handleSubmit(e) {
         e.preventDefault();
         try {
-            const updateproject = await axios.put(`http://localhost:5000/updateproject/${id}`, updatepro);
+            const updateproject = await axios.post(`http://localhost:5000/project/update/${id}`, updatepro);
             alert("Successfully updated");
         } catch (error) {
             console.error("Update failed:", error);
             alert("Failed to update project");
         }
     }
-
 
 
     return (
@@ -57,16 +63,23 @@ function Updateproject() {
                         <textarea className="form-control" id="taskDescription" name='description' value={updatepro.description} onChange={handleInput}></textarea>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="taskTitle" className="form-label">status</label>
-                        <input type="text" placeholder='title' className="form-control" id="taskTitle" name='status' value={updatepro.status} onChange={handleInput} />
+                        <label htmlFor="taskPriority" className="form-label">Status</label>
+                        <select className="form-select" name='status' value={updatepro.status} onChange={handleInput} id="taskPriority">
+                            <option value="low">show status</option>
+                            {
+                                getStatus.map((status) => (
+                                    <option value={status} key={status}>{status}</option>
+                                ))
+                            }
+                        </select>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="taskTitle" className="form-label">startDate</label>
-                        <input type="text" placeholder='title' className="form-control" id="taskTitle" name='startDate' value={updatepro.startDate} onChange={handleInput} />
+                        <input type="Date" placeholder='title' className="form-control" id="taskTitle" name='startDate' value={updatepro.startDate?.substring(0,10)} onChange={handleInput} />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="taskTitle" className="form-label">endDate</label>
-                        <input type="text" placeholder='title' className="form-control" id="taskTitle" name='endDate' value={updatepro.endDate} onChange={handleInput} />
+                        <input type="Date" placeholder='title' className="form-control" id="taskTitle" name='endDate' value={updatepro.endDate?.substring(0,10)} onChange={handleInput} />
                     </div>
                     <div >
                         <button className={`${styles.updatebtn}`}>Submit</button>

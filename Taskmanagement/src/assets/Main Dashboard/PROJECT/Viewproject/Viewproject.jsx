@@ -11,10 +11,9 @@ function Viewproject() {
     useEffect(() => {
         async function fetchProject() {
             try {
-                const response = await axios.get(`http://localhost:5000/singleProject/${id}`);
+                const response = await axios.get(`http://localhost:5000/project/single/${id}`);
                 const projectData = response.data.project;
-                setProject(projectData);
-                console.log(projectData);
+                setProject(projectData);                
 
             } catch (error) {
                 console.error("Failed to fetch project:", error);
@@ -29,12 +28,14 @@ function Viewproject() {
             <div className={`${styles.cardcontainer}`}>
                 <div className={`${styles.card} card`}>
                     <div className={`${styles.cardbody} card-body`}>
+                        <h3>View Project</h3>
                         <p className="card-title">Title: {project.name}</p>
                         <p className="card-text">Description: {project.description}</p>
                         <p className='card-text'>Budget: {project.budget}</p>
                         <p className='card-text'>Status: {project.status}</p>
-                        <p className="card-text">Start Date: {project.startDate}</p>
-                        <p className="card-text">End Date: {project.endDate}</p>
+                        <p className='card-text'>Team: {project.team?.username}</p>
+                        <p className="card-text">Start Date: {project.startDate?.substring(0,10)}</p>
+                        <p className="card-text">End Date: {project.endDate?.substring(0,10)}</p>
                         <div>
                             <Link className={`${styles.cardbutton}`} to={`/Updateproject/${project._id}`}>Edit</Link>
                         </div>

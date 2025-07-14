@@ -9,7 +9,7 @@ function Getproject() {
     useEffect(() => {
         async function getProject() {
             const token = localStorage.getItem("token")
-            const response = await axios.get(`http://localhost:5000/getIndividualproject`, {
+            const response = await axios.get(`http://localhost:5000/project/user/Individual`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -26,7 +26,7 @@ function Getproject() {
 
     async function handleclick(id) {
         try {
-            const deletepro = await axios.delete(`http://localhost:5000/deleteproject/${id}`)
+            const deletepro = await axios.delete(`http://localhost:5000/project/delete/${id}`)
             console.log(deletepro);
             alert("succesfully deleted")
         } catch (error) {
@@ -48,8 +48,8 @@ function Getproject() {
                                         <p className='card-text'>{list.budget}</p>
                                         <p className='card-text'>{list.status}</p>
                                         <p className='card-text'>{list.team.username}</p>
-                                        <p className="card-text">{list.startDate}</p>
-                                        <p className="card-text">{list.endDate}</p>
+                                        <p className="card-text">{list.startDate?.substring(0,10)}</p>
+                                        <p className="card-text">{list.endDate?.substring(0,10)}</p>
                                         <div>
                                             <Link to={`/Viewproject/${list._id}`} className={`${styles.btn}`}>View Project</Link>
                                             <Link className={`${styles.btn}`} onClick={() => handleclick(list._id)}>Delete</Link>

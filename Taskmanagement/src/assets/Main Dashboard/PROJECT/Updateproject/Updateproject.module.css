@@ -26,8 +26,20 @@
     background-image: url('/public/Images/cardbg.jpg');
 }
 
+.form select {
+    width: 17rem;
+    border-radius: 20px;
+    color: white;
+    border: 1px solid rgba(244, 245, 247, 0.178);
+    background-color: transparent;
+}
+
+.form option {
+    color: black;
+}
 
 .form input {
+    width: 17rem;
     border-radius: 20px;
     border: 1px solid rgba(244, 245, 247, 0.178);
     background-color: transparent;
@@ -45,14 +57,7 @@
 }
 
 .form textarea {
-    border-radius: 20px;
-    border: 1px solid rgba(244, 245, 247, 0.178);
-    background-color: transparent;
-    color: rgb(244, 245, 247);
-    font-weight: 400;
-}
-
-.form select {
+    width: 17rem;
     border-radius: 20px;
     border: 1px solid rgba(244, 245, 247, 0.178);
     background-color: transparent;

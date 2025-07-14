@@ -23,7 +23,7 @@ function Createproject() {
             const response3 = response2.data
             setGetUser(response3)
 
-            const response4 = await axios.get(`http://localhost:5000/status`);
+            const response4 = await axios.get(`http://localhost:5000/project/status`);
             const response5 = response4.data.enumstatus
             setGetStatus(response5);
         }
@@ -36,7 +36,7 @@ function Createproject() {
 
     async function handlesubmit(e) {
         e.preventDefault();
-        const response = await axios.post('http://localhost:5000/projects', postData);
+        const response = await axios.post('http://localhost:5000/project/create', postData);
         alert("Project Created Successfully")
     }
     return (

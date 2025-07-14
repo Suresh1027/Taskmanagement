@@ -1,9 +1,21 @@
+.gettaskcon {
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-left: -20px;
+    margin-top: 10px;
+}
+
 .card {
-    width: 14rem;
+    width: 11rem;
+    text-align: center;
     border-radius: 0.5rem;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     color: aliceblue;
-    padding: 1rem;
     margin-bottom: 1rem;
     transition: all 0.3s ease;
     background-image: url('/public/Images/cardbg.jpg');
